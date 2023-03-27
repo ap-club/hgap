@@ -1,0 +1,185 @@
+@media screen and (min-width: 1000px) {
+  .pitch .pictures {
+    width: 30%;
+  }
+
+  .pitch .text {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .pitch {
+    flex-direction: column;
+  }
+}
+
+body {
+  background-color: #1a2329;
+  margin: 20px 20px 0 20px;
+  font-family: monospace;
+  color: #fff;
+}
+
+.frame div {
+  position: fixed;
+  background-color: #1a2329;
+}
+
+.frame .left {
+  border-right: 1px solid #fff;
+  height: calc(100vh - 40px);
+  width: 20px;
+  top: 20px;
+  left: 0;
+}
+
+.frame .right {
+  border-left: 1px solid #fff;
+  height: calc(100vh - 40px);
+  width: 20px;
+  top: 20px;
+  right: 0;
+}
+
+.frame .bottom {
+  border-top: 1px solid #fff;
+  width: calc(100% - 40px);
+  height: 20px;
+  left: 20px;
+  bottom: 0;
+}
+
+.frame .top {
+  border-bottom: 1px solid #fff;
+  width: calc(100% - 40px);
+  height: 20px;
+  left: 20px;
+  top: 0;
+}
+
+.text p, li {
+  font-size: 30px;
+  color: #fff;
+  text-align: justify;
+}
+
+.text p, ul {
+  margin-bottom: 50px;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  background-color: #80ad76;
+  color: #1a2329;
+  text-decoration: none;
+}
+
+a:hover .name {
+  border-color: #1a2329;
+}
+
+.pitch {
+  display: flex;
+  margin: 20px 20px 0 20px;
+}
+
+.pitch .text {
+  margin-right: 20px;
+}
+
+.pitch .pictures img {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.blue {
+  color: #035be0;
+}
+
+.splash {
+  background: rgb(26,35,41);
+  background: linear-gradient(180deg, rgba(35,46,54,1) 0%, rgba(26,35,41,1) 100%);
+}
+
+#loadOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #1a2329;
+  transition: 0.4s opacity ease-out;
+  z-index: 100;
+}
+
+#loadOverlay svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.projects, .project {
+  display: flex;
+}
+
+.project img {
+  width: 300px;
+}
+
+.project {
+  width: 50%;
+}
+
+.date, .summary {
+  font-size: 20px;
+}
+
+.name {
+  font-size: 30px;  
+  transform: skew(-20deg);
+  margin-top: 0;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+.details {
+  margin: 30px;
+}
+
+.project {
+  border: 1px solid #fff;
+  margin: 10px;
+}
+
+.projects {
+  padding: 10px;
+}
+
+a.project {
+  text-decoration: none;
+}
+
+.splash img {
+  opacity: 0;
+  position: absolute;
+}
+
+.splash {
+  width: 100%;
+  height: 90vh;
+}
+
+.center {
+  position: absolute;
+}
+
+main {
+  opacity: 0;
+  position: relative;
+}
