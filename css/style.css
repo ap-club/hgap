@@ -6,11 +6,35 @@
   .pitch .text {
     width: 70%;
   }
+
+  .project {
+    width: 50%;
+  }
+
+  .text p, li {
+    text-align: justify;
+  }
 }
 
 @media screen and (max-width: 999px) {
-  .pitch {
+  .pitch, .projects {
     flex-direction: column;
+  }  
+}
+
+@media screen and (max-width: 1200px) {
+  .project {
+    flex-direction: column;
+  }
+
+  .project img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .project img {
+    width: 300px;
   }
 }
 
@@ -61,7 +85,6 @@ body {
 .text p, li {
   font-size: 30px;
   color: #fff;
-  text-align: justify;
 }
 
 .text p, ul {
@@ -84,7 +107,7 @@ a:hover .name {
 
 .pitch {
   display: flex;
-  margin: 20px 20px 0 20px;
+  margin: 20px;
 }
 
 .pitch .text {
@@ -126,14 +149,6 @@ a:hover .name {
 
 .projects, .project {
   display: flex;
-}
-
-.project img {
-  width: 300px;
-}
-
-.project {
-  width: 50%;
 }
 
 .date, .summary {

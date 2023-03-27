@@ -7,11 +7,13 @@ function resizeSplash() {
   let maxX = 0;
   let maxY = 0;
 
+  const parentWidth = splash.clientWidth;
+  const parentHeight = splash.clientWidth * (9/16);
   for (const img of splash.getElementsByTagName('img')) {
-    const width = img.dataset.width * window.innerWidth;
+    const width = img.dataset.width * parentWidth;
     const height = (img.height / img.width) * width;
-    const top = img.dataset.y * window.innerHeight;
-    const left = img.dataset.x * window.innerWidth;
+    const top = img.dataset.y * parentHeight;
+    const left = img.dataset.x * parentWidth;
 
     img.style.width = `${width}px`;
     img.style.top = `${top}px`;
@@ -23,7 +25,7 @@ function resizeSplash() {
     img.draggable = false;
   }
 
-  splashCenter.style.left = `${(splash.clientWidth - maxX) / 2}px`;
+  splashCenter.style.left = `${(window.innerWidth - maxX) / 2}px`;
   splashCenter.style.top = `${(splash.clientHeight - maxY) / 2}px`;
 }
 
