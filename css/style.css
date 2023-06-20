@@ -170,10 +170,12 @@ a:hover .name {
 .project {
   border: 1px solid #fff;
   margin: 10px;
+  flex-basis: calc(50% - 22px);
 }
 
 .projects {
   padding: 10px;
+  flex-wrap: wrap;
 }
 
 a.project {
