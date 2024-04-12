@@ -1,0 +1,19 @@
+Options +FollowSymLinks -Indexes
+
+ErrorDocument 401 "401 Unauthorized"
+ErrorDocument 403 "403 Forbidden"
+ErrorDocument 404 "404 Not Found"
+ErrorDocument 500 "500 Internal Server Error"
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule "^(.*)$" "$1.html" [NC,L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule "^(.*)$" "$1.php" [NC,L]
+
+</IfModule>
