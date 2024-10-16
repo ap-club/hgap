@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://8812un061gy7"]
+
+[ext_resource type="Texture2D" uid="uid://dje6y4xgqj7dm" path="res://icon.svg" id="1_jcnxh"]
+[ext_resource type="Script" path="res://npc.gd" id="2_snf64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33aiu"]
+size = Vector2(336, 240)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_jcnxh")
+script = ExtResource("2_snf64")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_33aiu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -120.0
+offset_top = -128.0
+offset_right = 122.0
+offset_bottom = -102.0
+text = "Talk (Z)"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

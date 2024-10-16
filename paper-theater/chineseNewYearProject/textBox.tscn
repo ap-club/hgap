@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://chelkdlgnjxgc"]
+
+[ext_resource type="Script" path="res://textBox.gd" id="1_gthqu"]
+[ext_resource type="Texture2D" uid="uid://c3m0xamgvlfbf" path="res://textBox.png" id="1_hdb2g"]
+
+[node name="textBox" type="CanvasLayer"]
+script = ExtResource("1_gthqu")
+
+[node name="TextBox" type="Sprite2D" parent="."]
+position = Vector2(560, 464)
+texture = ExtResource("1_hdb2g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 360.0
+offset_right = 1040.0
+offset_bottom = 584.0
+theme_override_font_sizes/font_size = 38
+text = "Text"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="."]
+offset_left = 992.0
+offset_top = 560.0
+offset_right = 1037.0
+offset_bottom = 591.0
+text = "Next"
