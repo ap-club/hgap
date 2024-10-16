@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Sempione Grotesk';
+  src: url('fonts/SempioneGrotesk-ExtraBold.otf') format('opentype'),
+       url('fonts/SempioneGrotesk-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Sempione Grotesk';
+  src: url('fonts/SempioneGrotesk-Medium.otf') format('opentype'),
+       url('fonts/SempioneGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Sempione Grotesk';
+  src: url('fonts/SempioneGrotesk-Regular.otf') format('opentype'),
+       url('fonts/SempioneGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Baligo';
+  src: url('fonts/Baligo-Regular.otf') format('opentype'),
+       url('fonts/Baligo-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Home Education';
+  src: url('fonts/HomeEducation.otf') format('opentype');
+  font-weight: 400;
+}
