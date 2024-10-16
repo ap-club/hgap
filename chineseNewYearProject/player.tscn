@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq3jwk2v5iadk"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_dn26q"]
+[ext_resource type="Texture2D" uid="uid://disa4dy1w2thb" path="res://player.png" id="2_ytwlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnm5s"]
+size = Vector2(152, 128)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_dn26q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.329412, 0.329412, 0.329412, 1)
+position = Vector2(0, 96)
+texture = ExtResource("2_ytwlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 56)
+shape = SubResource("RectangleShape2D_rnm5s")
+
+[node name="WolfJumpTime" type="Timer" parent="."]
+wait_time = 0.1

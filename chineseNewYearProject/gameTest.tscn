@@ -1,0 +1,140 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddnokubjab5vs"]
+
+[ext_resource type="Texture2D" uid="uid://cca3eq2sj2krc" path="res://stage.png" id="1_8el4p"]
+[ext_resource type="Texture2D" uid="uid://ctugnd7pwrhxo" path="res://background.png" id="1_dd4a4"]
+[ext_resource type="Script" path="res://gameTest.gd" id="1_jq2r1"]
+[ext_resource type="PackedScene" uid="uid://dq3jwk2v5iadk" path="res://player.tscn" id="2_2gn3n"]
+[ext_resource type="PackedScene" uid="uid://8812un061gy7" path="res://npc.tscn" id="3_k6kbx"]
+[ext_resource type="Texture2D" uid="uid://cdjc45gefi7o0" path="res://level.png" id="3_xwvym"]
+[ext_resource type="Texture2D" uid="uid://stlmvsaqx73" path="res://curtain.png" id="5_5bptv"]
+[ext_resource type="PackedScene" uid="uid://chelkdlgnjxgc" path="res://textBox.tscn" id="6_ueuhx"]
+
+[sub_resource type="Animation" id="Animation_j0bwc"]
+resource_name = "curtainSlideOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup/Curtain:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-576, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup/Curtain2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(576, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasGroup/Curtain:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.258824, 0.258824, 0.258824, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasGroup/Curtain2:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.258824, 0.258824, 0.258824, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i0lx"]
+_data = {
+"curtainSlideOut": SubResource("Animation_j0bwc")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jq2r1")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1168, 232)
+scale = Vector2(4.60957, 2.65741)
+texture = ExtResource("1_dd4a4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-368, 464)
+polygon = PackedVector2Array(-280, 32, -272, 240, -272, 584, 2192, 592, 2176, 360, 2040, 328, 2024, 224, 1824, 120, 1688, 64, 1640, 8, 1616, -104, 1496, -224, 1320, -256, 1120, -248, 584, -264, 408, -200, 120, -64)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-280, 32)
+polygon = PackedVector2Array(2424, 1016, 2440, 704, 2560, 240, 2608, 168, 3072, 176, 3456, 184, 3464, 1024)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1696, 240, 1800, 216, 1904, 216, 1984, 256, 1992, 344, 1920, 392, 1792, 392, 1696, 352)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1272, 80)
+scale = Vector2(3.31944, 3.01235)
+texture = ExtResource("3_xwvym")
+
+[node name="Test NPC" parent="." instance=ExtResource("3_k6kbx")]
+position = Vector2(464, 128)
+
+[node name="player" parent="." instance=ExtResource("2_2gn3n")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.0
+drag_right_margin = 0.05
+drag_bottom_margin = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5i0lx")
+}
+
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+offset = Vector2(576, 327.5)
+scale = Vector2(1.1, 1.1)
+transform = Transform2D(1.1, 0, 0, 1.1, 576, 327.5)
+
+[node name="Stage" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("1_8el4p")
+
+[node name="Curtain" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("5_5bptv")
+
+[node name="Curtain2" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("5_5bptv")
+flip_h = true
+
+[node name="startButton" type="Button" parent="CanvasGroup"]
+offset_left = -80.0
+offset_top = -16.0
+offset_right = 80.0
+offset_bottom = 15.0
+text = "Start Game"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_ueuhx")]
+visible = false
+
+[connection signal="talkTo" from="Test NPC" to="." method="_on_sprite_2d_talk_to"]
+[connection signal="pressed" from="CanvasGroup/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="textEnd" from="CanvasLayer" to="." method="_on_canvas_layer_text_end"]
+[connection signal="textEnd" from="CanvasLayer" to="Test NPC" method="_on_canvas_layer_text_end"]
