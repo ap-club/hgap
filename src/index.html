@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pi Day 2023</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Information and activities for Greeley's Pi Day!">
+        <meta name="author" content="Daniel Kim">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Pi Day 2023">
+        <meta property="og:description" content="Information and activities for Greeley's Pi Day!">
+        <meta property="og:url" content="https://hgap.club/pi-day">
+        <meta property="og:site_name" content="HG Applied Programming">
+
+        <meta name="twitter:title" content="Pi Day 2023">
+        <meta name="twitter:description" content="Information and activities for Greeley's Pi Day!">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon" href="media/pi.svg" type="image/svg+xml">
+        <link rel="canonical" href="https://hgap.club/pi-day">
+        <link rel="stylesheet" href="css/style.css?v=8">
+        <script src="lib/decimal.js" defer></script>
+        <script src="js/main.js?v=3" defer></script>
+        <script src="js/timeline.js?v=2" defer></script>
+        <script src="js/search.js?v=2" defer></script>
+        <script src="js/coopCompute.js?v=7" defer></script>
+        <script src="js/archimedes.js?v=2" defer></script>
+      </head>
+    <body>
+      <div id="loadOverlay">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgba(255, 255, 255, 0); display: block;" width="90px" height="90px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+          <circle cx="50" cy="50" fill="none" stroke="#368ddf" stroke-width="7" r="42" stroke-dasharray="197.92033717615698 67.97344572538566">
+            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.9s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+          </circle>
+        </svg>
+      </div>
+      <nav>
+        <button id="hamburger">≡</button>
+        <ul id="menu">
+          <li><a href="#cooperative">Cooperative Computation</a></li>
+          <li><a href="#history">Timeline</a></li>
+          <li><a href="#search">Find a Number/Picture/Text in Pi</li>
+          <li><a href="#archimedes">Method of Exhaustion</li>
+          <li><a href="#trivia">Fun Facts</a></li>
+          <li><a href="#credits">Credits & Info</a></li>
+        </ul>
+      </nav>
+      <main>
+        <h1 class="heading" id="cooperative"><span>Cooperative Computation</span></h1>
+        <p>Help compute as many digits of pi as possible on the week of Pi Day!</p>
+        <section id="coop" class="applet">
+          <div class="section short">
+            <button id="getWork">COMPUTE</button>
+            <p id="status"></p>
+            <p>Depending on your hardware, each round can take 3-30 seconds. Please be patient. If it takes longer than 2 minutes, reload the page.</p>
+          </div>
+          <div class="section short">
+            <p class="remove-top">Greeley has calculated</p>
+            <h2 id="totalDigits">-</h2>
+            <p>digits of π.</p>
+            <p id="totalTerms">(- terms)</p>
+          </div>
+          <div class="section short">
+            <p class="remove-top">You have calculated</p>
+            <h2 id="personalDigits">-</h2>
+            <p>digits of π.</p>
+            <p id="personalTerms">(- terms)</p>
+          </div>
+          <div class="section long">
+            <p class="remove-top">All of the computers involved are calculating terms, assigned by a central server, of the series in the Chudnovsky algorithm.</p>
+            <img src="media/chudnovsky.png">
+            <p>After a series of operations, the sum of the terms provides an approximation of pi. The more terms calculated, the more digits determined. This series is rapidly convergent; each new term provides approximately 14.18 more digits of pi.</p>
+            <p class="remove-bottom">The Chudnovsky algorithm is considered the fastest method for calculating pi, and Google used it to achieve their 2022 record of 100 trillion digits.</p>
+          </div>
+        </section>
+        <h1 class="heading" id="history"><span>History of Pi</span></h1>
+        <p class="pc tip">Click on the dots to reveal information.</p>
+        <section id="timeline">
+          <div class="above-overlay" style="z-index:3;"></div>
+          <div class="below-overlay" style="z-index:3;"></div>
+          <p class="marker" data-year="-2000">2000 BCE</p>
+          <div class="event above left" data-id="1">
+            <p class="date">~2000 BCE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Babylonian mathematicians estimated a circle's area (πr<sup>2</sup>) to be 3 times the the square of its radius, giving pi its first known approximation of 3. A stone tablet from 1900-1680 BCE revealed the additional use of 3 ⅛ (3.125).</p>
+              </div>
+              <img src="media/babylonia.jpg">
+            </div>
+          </div>
+          <div class="event below left" data-id="2">
+            <p class="date">~1550 BCE</p>
+            <div class="flex">
+              <div class="content">
+              <p>The <i>Rhind Mathematical Papyrus</i>, an ancient Egyptian scroll, helped scribes learn to solve particular math problems. Ahmes, the scribe who authored it, wrote "Cut off 1/9 of a diameter and construct a square upon the remainder; this has the same area as the circle," which implies π = 4 * (8/9)^2 ≅ 3.16045: a fair approximation.</p>
+              </div>
+              <img src="media/rhind.png">
+            </div>
+          </div>
+          <p class="marker" data-year="-1500">1500 BCE</p>
+          <p class="marker" data-year="-1000">1000 BCE</p>
+          <p class="marker" data-year="-500">500 BCE</p>
+          <div class="event above left" data-id="3">
+            <p class="date">287-212 BCE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Archimedes, a Greek mathematician, used the Method of Exhaustion and the perimeters of inscribed and circumscribed regular polygons to calculate pi. Using a 96-sided polygon, he found pi to be between 3.1408 (3 1/7) and 3.1429 (3 10/71). <a href="#archimedes">Learn more</a></p>
+              </div>
+              <img src="media/archimedes.jpeg">
+            </div>
+          </div>
+          <p class="marker" data-year="0">0 CE</p>
+          <div class="event below right" data-id="4">
+            <p class="date">429-501 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Zu Chongzhi used a 24,576-sided polygon to achieve the approximation of 355/113 (3.141592), correct to 6 decimal places, a record that would last for the next 800 years.</p>
+              </div>
+              <img src="media/chongzhi.jpg">
+            </div>
+          </div>
+          <p class="marker" data-year="500">500 CE</p>
+          <p class="marker" data-year="1000">1000 CE</p>
+          <div class="event above right" data-id="5">
+            <p class="date">~1400 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Madhava, a mathematician-astronomer from medieval India, is thought to have discovered the Madhava-Leibniz power series for pi (picture) and a rapidly convergent series that obtained 11 decimal places of pi from 21 terms. He also determined a 4-term approximation formula for sine remarkably close to the Taylor series approximation two centuries before the discovery of the Taylor expansion.</p>
+              </div>
+              <img src="media/madhava.png">
+            </div>
+          </div>
+          <p class="marker" data-year="1500">1500 CE</p>
+          <div class="event above right" data-id="6">
+            <p class="date">1615 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Ludolph van Ceulen, inspired by Archimedes' methods, spent 25 years calculating pi to 35 decimal places using a polygon with 2^62 sides (~4.6 quintillion). Ceulen published 20 decimal places in his lifetime, and the other 15 were published posthumously in 1615.</p>
+              </div>
+              <img src="media/ceulen.jpg">
+            </div>
+          </div>
+          <div class="event below right" data-id="7">
+            <p class="date">1631 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>William Oughtred published <i>Clavis Mathematicae</i> in 1631, the first book to use the greek letter π in relation to circles. However, pi denoted circumference, unlike the modern-day use of the symbol, which is "the ratio between a circle's circumference and its diameter" (before the symbol caught on, referring to the ratio was verbose). William Jones' 1706 <i>A New Introduction to the Mathematics</i> introduced the modern role of pi.</p>
+              </div>
+              <img src="media/oughtred.jpg">
+            </div>
+          </div>
+          <div class="event below right" data-id="8">
+            <p class="date">1761 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>In 1761, Johann Lambert proved that pi was irrational, which means it cannot be expressed as a ratio of two integers. Using a continued fraction expansion, he showed that if x is rational, tan(x) cannot be rational. Since tan(π/4) = 1 and 1 is rational, π/4 and thus π cannot be rational.</p>
+              </div>
+              <img src="media/lambert.jpg">
+            </div>
+          </div>
+          <div class="event above right" data-id="9">
+            <p class="date">1882 CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>Ferdinand von Lindemann, in 1882, proved that pi is transcendental: not a solution to any algebraic equation. This deemed the quadrature of the circle, an ancient problem that caused thousands of years of mental toil, impossible. This problem is also called "squaring the circle," which has become an idiom for trying to solve something impossible.</p>
+              </div>
+              <img src="media/lindemann.jpg">
+            </div>
+          </div>
+          <div class="event below right" data-id="10">
+            <p class="date">20th Century CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>D. F. Ferguson found 808 digits of pi after a year of calculations on a mechanical calculator. In 1949, the ENIAC (Electronic Numerical Integrator and Computer) (picture) was complete and could calculate 2037 digits of pi in 70 hours. The IBM 7090 computer surpassed 100,000 digits in 1961, and the CDC 7600 reached pi's millionth decimal place in 1973.</p>
+              </div>
+              <img src="media/eniac.jpg">
+            </div>
+          </div>
+          <p class="marker" data-year="2000">2000 CE</p>
+          <div class="event above right" data-id="11">
+            <p class="date">21st Century CE</p>
+            <div class="flex">
+              <div class="content">
+              <p>In 2021, scientists at the University of Applied Sciences of the Grisons calculated pi to 62.8 trillion decimal places. Last year, Google used the Chudnovsky algorithm and their Cloud Compute Engine to achieve the current record of 100 trillion digits.</p>
+              </div>
+            </div>
+          </div>
+          <div id="line">
+            <div class="circle" data-year="-2000" data-id="1">
+              <div class="tooltip right">Babylonia</div>
+            </div>
+            <div class="circle" data-year="-1550" data-id="2">
+              <div class="tooltip right">Ancient Egypt</div>
+            </div>
+            <div class="circle" data-year="-287" data-id="3">
+              <div class="tooltip left">Archimedes</div>
+            </div>
+            <div class="circle" data-year="429" data-id="4">
+              <div class="tooltip left">Zu Chongzhi</div>
+            </div>
+            <div class="circle" data-year="1400" data-id="5">
+              <div class="tooltip left">Madhava</div>
+            </div>
+            <div class="circle" data-year="1610" data-id="6">
+              <div class="tooltip left">Ludolph van Ceulen</div>
+            </div>
+            <div class="circle" data-year="1631" data-id="7">
+              <div class="tooltip left">William Oughtred</div>
+            </div>
+            <div class="circle" data-year="1761" data-id="8">
+              <div class="tooltip left">Johann Lambert</div>
+            </div>
+            <div class="circle" data-year="1882" data-id="9">
+              <div class="tooltip left">Ferdinand von Lindemann</div>
+            </div>
+            <div class="circle" data-year="1900" data-id="10">
+              <div class="tooltip left">Computers</div>
+            </div>
+            <div class="circle" data-year="2000" data-id="11">
+              <div class="tooltip left">Modern Records</div>
+            </div>
+          </div>
+        </section>
+
+        <h1 class="heading" id="search"><span>Find a Number, Picture, or Text in Pi</span></h1>
+        <p class="tip">Find the position of the first occurrence in the first billion digits of pi.</p>
+        <p>Choose one to search for:</p>
+        <form id="pickTool">
+          <input type="radio" name="type" value="number" id="numberTextType">
+          <label for="numberTextType">Number or Text</label><br>
+          <input type="radio" name="type" value="picture" id="pictureType">
+          <label for="pictureType">Picture</label><br>
+        </form>
+        <section class="applet" id="searchApp">
+          <form id="numTextSearch" class="section full hidden">
+            <label for="number">Enter number/text:</label>
+            <input type="text" name="input" id="query" maxlength="1000">
+            <p id="searchError" class="red"></p>
+            <ul>
+              <li>For number sequences, the tool will look for the first exact match in the first billion digits of pi, and either show where it occurs or state that it doesn't occur in that subset of pi.</li>
+              <li>For text, the tool will convert each letter (or symbol) to its position in the alphabet (1-26, space = 0), then perform the above.</li>
+              <li>Click "Search" to search. The result will be in the box below.</li>
+            </ul>
+            <input type="hidden" name="number">
+            <input type="submit" value="Search" name="submit">
+          </form>
+          <form id="pictureSearch" class="section full hidden">
+            <p>Click grid boxes to create a picture:</p>
+            <table id="drawing">
+              <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+            <ul>
+              <li>Each column represents, from top to bottom, 4-bit binary numbers from left to right. Activated (filled-in) squares are 1 and all others are 0.</li>
+              <li>The tool will disregard "padding" columns in the search, which are empty columns to the left of the leftmost column with an activated square, or to the right of the rightmost occupied column. Empty drawings are rejected.</li>
+              <li>The tool will convert each 4-bit binary number into a numeric decimal value.</li>
+              <li>For this number sequence that represents the drawing, the tool will look for the first exact match in the first 1 billion digits of pi, and either show where it occurs or state that it doesn't occur in that subset of pi.</li>
+            </ul>
+            <input type="submit" value="Search">
+          </form>
+          <div id="searchResult" class="section full">
+            Converted input: <span id="convertedSearch"></span>
+            <p>Result:</p>
+            <pre id="resultBox"></pre>
+          </div>
+        </section>
+
+        <h1 class="heading" id="archimedes"><span>Archimedes' Method of Exhaustion</span></h1>
+        <section class="applet" id="archimedesApp">
+          <div class="section half">
+            <h2>Visualization</h2>
+            <p>The red polygon represents the lower bound of the circle's perimeter/area while the blue polygon represents the upper bound.</p>
+            <label for="archimedesSlider">Number of sides: <span id="nSides">3</span></label><br>
+            <input type="range" value="3" min="3" max="40" name="archimedesSlider" id="archimedesSlider"><br>
+            <canvas id="archimedesCanvas"></canvas>
+          </div><div class="section half">
+            <h2>Calculator</h2>
+            <p>Read on to see how Archimedes performed this calculation without trigonometric functions!</p>
+            <form id="archimedesCalculator">
+              <label for="archCalcIters">Number of iterations: <span id="nIters">1</span></label>
+              <input type="range" name="archCalcIters" id="archCalcIters" value="1" min="1" max="30">
+              <p>Two polygons with <span id="calcSides">6</span> sides each will be used.</p>
+              <input type="submit" value="Calculate" name="submit">
+              <div id="archResult"></div>
+            </form>
+          </div>
+        </section>
+        <section id="archDemo">
+          <img src="media/step1.png" class="item"><div class="item">
+            <p>Start with circle and a regular hexagon inscribed in the circle. A hexagon can be split into six equilateral triangles, so the circle's radius (r=1 for simplicity) is equal to the hexagon's side lengths. </p>
+            <p>For each "iteration" in this method, the number of sides the polygon has doubles. In each iteration, the goal is to calculate the side length of the next polygon. Inscribe a regular 12-gon whose vertices meet the hexagon's.</p>
+          </div><img class="item" src="media/step2.png"><img class="item" src="media/step3.png"><div class="item">
+            <p>Connect the center of the polygons to a vertex of the 12-gon; this segment bisects the hexagon's side.</p>
+            <p>Apply Pythagoras' Theorem on the right triangle outlined in purple. The hypotenuse is the radius, one leg is half of the side length (S<sub>1</sub>), and the other leg is the radius minus a small distance NC from the 12-gon's vertex.</p>
+          </div><img class="item" src="media/step4.png"><img class="item" src="media/step5.png"><div class="item">
+            <p>Now NC and NB, two legs of the right triangle outlined in black, are defined in terms of S<sub>1</sub>, and the hypotenuse is the side length of the 12-gon (S<sub>2</sub>).</p>
+            <p>Apply Pythagoras again and solve for S<sub>2</sub>, then find the ratio between circumference and diameter (or circumference and twice the radius) to determine the approximation. At 12 sides, the approximation is 3.106, but this is better than the approximation with the hexagon, 3.</p>
+            <p>Continuing to double the sides and recursively apply the formula results in better approximations. Archimedes went to a 96-gon (6, 12, 24, 48, 96) and determined three digits.</p>
+          </div><img class="item" src="media/step6.png"><img class="item" src="media/step7.png"><div class="item">
+            <p>To find the "upper bound" of each step, Archimedes used a circumscribed polygon drawn around the circle with the same number of sides as the inscribed one but a slightly larger side length. This length is found easily using similar triangles.</p>
+            <p>The side length or perimeter of the inscribed polygon is multiplied by a scale factor to get those of the circumscribed polygon.</p>
+          </div><img class="item" src="media/step8.png">
+        </section>
+
+        <h1 class="heading" id="trivia"><span>Fun Facts</span></h1>
+        <ol id="fact-list">
+          <li>π = C/d. Pi is the ratio between any circle's circumference (perimeter) and its diameter.</li>
+          <li>People suspect π to contain every conceivable combination of the digits 0-9. This seems likely but hasn't been proven.
+            <ul>
+              <li>A number with this characteristic is called a normal number. This is an irrational number for which all (finite) sequences of numbers of a certain length occur with the same frequency. For instance, each pair of digits 00-99 will occur 1% (1/100) of the time.</li>
+              <li>In other words, the digits of a normal number are uniformly distributed across the infinite decimal expansion, and no particular number or sequence is more frequent. All normal numbers are irrational, but not all irrational numbers are normal.</li>
+              <li>Looking at the first 30 million digits of pi makes it appear to have this property, but there is no known way to prove this for pi.</li>
+              <li>Go to <a href="#search">Find a Number, Picture, or Text in Pi</a></li>
+            </ul>
+          </li>
+          <li>The decimal part of all positive multiples of pi is uniformly (evenly) distributed from 0 to 1.
+            <ul>
+              <li>y = n*pi mod 1 -> 0 &lt; y &lt; 1, y is uniform between 0 and 1</li>
+              <li>For more info, see <a href="https://jonismathnotes.blogspot.com/2015/05/basic-ergodic-theory.html">Weyl's equidistribution theorem</a></li>
+              <li class="nobullet"><img src="media/equidistribution.png"></li>
+            </ul>
+          </li>  
+          <li>Pi has applications in physics, astronomy, mathematics, and even architecture and construction.</li>
+          <li>Pi emerges in nature through the meandering of rivers.
+            <ul>
+              <li>A river's bendiness is determined by its “meandering ratio," or the ratio of the river's actual length to the direct distance from its source to its mouth.</li>
+              <li><a href="https://www.youtube.com/watch?v=TUErNWBOkUM">Numberphile video on meandering and pi</a></li>
+              <li class="nobullet"><img src="media/meander.gif"> <img src="media/nature.png"></li>
+            </ul>
+          </li>
+          <li>Akira Haraguchi, in 16 hours and 30 minutes, recited 100,000 digits of π from memory at a public event in 2006.</li>
+          <li>Pi Day is March 14th, 3/14, because π ≅ 3.14. Pi Approximation Day is celebrated on July 22nd because 22/7 (≅3.143) is a popular approximation for pi.</li>
+          <li>Albert Einstein was born on March 14th, 1879, and Stephen Hawking died on March 14th, 2018.</li>
+          <li>In 2009, Congress passed Resolution 224, which designated March 14th as Pi Day, in hopes of fostering enthusiasm for math and science among U.S. students.</li>
+          <li>Pi provides accurate calculations even at modest precisions. Using π with just 9 decimal digits can give a figure for the Earth's circumference that only errs 0.25 inches in 25,000 miles.</li>
+          <li>Still, the competition to calculate more digits of π continues.
+            <ul>
+              <li>In 2010, we knew ~5 trillion digits, and since 2022, we know 100 trillion digits.</li>
+              <li>These computation feats primarily demonstrate advancements in computation, storage, and networking. Google used its 100-trillion-digit record to endorse its cloud infrastructure services.</li>
+              <li>The calculation of pi is a common stress test for a computer processor.</li>
+            </ul>
+          </li>
+        </ol>
+        <img src="media/pipun.gif" class="img-oneoff">
+        <h1 class="heading" id="credits"><span>Credits & Info</span></h1>
+        <section class="center">
+          <p>Pi Day 2023 is an educational initiative for the Horace Greeley community by the Applied Programming Club with guidance from the Math Club.</p>
+          <p><a href="references">References</a></p>
+          <p>Website by:</p>
+          <p>
+            Daniel Kim<br>
+            Lindsay Kim<br>
+          </p>
+          <p>Contact <a href="mailto:hi@hgap.club">hi@hgap.club</a> with suggestions, concerns, or proposals.</p>
+          <p>Visit <a href="https://hgap.club">hgap.club</a> to join the Applied Programming Club!</p>
+        </section>
+      </main>
+    </body>
+</html>
